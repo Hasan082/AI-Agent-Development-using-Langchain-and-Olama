@@ -13,7 +13,7 @@ class Product(models.Model):
 class ChatMessage(models.Model):
     user_id = models.CharField(max_length=255)
     message = models.TextField()
-    is_bot = models.BooleanField(default=False)
+    is_bot = models.BooleanField(default=False) 
     timestamp = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):

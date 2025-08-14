@@ -3,13 +3,17 @@
 
 <!-- Chatbot Widget -->
 <div id="chatbot-widget">
+  
   <div id="chatbot-header">
     <span>Chat with me</span>
     <button id="chatbot-close">&times;</button>
   </div>
+
   <div id="chat-box"></div>
+
   <form id="chat-form" data-api-url="{% url 'chatbot_api' %}">
     <input type="text" id="user-input" placeholder="Type your message..." autocomplete="off" />
     <button id="submit-button" type="submit">Send</button>
   </form>
+
 </div>
