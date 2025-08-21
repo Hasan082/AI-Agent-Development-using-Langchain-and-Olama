@@ -3,8 +3,8 @@ from litellm import completion
 import os
 
 BASE_URL = os.getenv("BASE_URL", "http://localhost:11434")
-MODEL_PROVIDER = os.getenv("MODEL_PROVIDER", "openai")
-MODEL_NAME = os.getenv("MODEL_NAME", "gpt-4o-mini")
+MODEL_PROVIDER = os.getenv("MODEL_PROVIDER", "ollama")
+MODEL_NAME = os.getenv("MODEL_NAME", "qwen2.5:1.5b")
 
 python_context = """
 You are Hasan's Python coding assistant.
