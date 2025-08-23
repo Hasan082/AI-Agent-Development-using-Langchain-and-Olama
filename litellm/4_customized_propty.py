@@ -1,5 +1,5 @@
 from litellm import completion
-from typing import List, Dict
+from typing import List, Dict, Any
 import os
 from dotenv import load_dotenv
 import json
@@ -11,7 +11,7 @@ MODEL_PROVIDER = os.getenv("MODEL_PROVIDER", "ollama")
 MODEL_NAME = os.getenv("MODEL_NAME", "qwen2.5:1.5b")
 
 
-def generate_response(messages: List[Dict]) -> str:
+def generate_response(messages: List[Dict]) ->  Dict[str, Any]:
     """Call LLM to get response"""
     response = completion(
         model=f"{MODEL_PROVIDER}/{MODEL_NAME}",
