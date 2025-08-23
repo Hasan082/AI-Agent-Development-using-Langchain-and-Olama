@@ -25,7 +25,6 @@ def generate_response_stream(messages: List[Dict]):
         model=f"{MODEL_PROVIDER}/{MODEL_NAME}",
         messages=messages,
         api_base=BASE_URL,
-        stream=True,
     )
 
     for event in stream:
