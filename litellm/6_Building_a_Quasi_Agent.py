@@ -1,4 +1,4 @@
-# Building a Quasi-Agent
+# Building a Mini-Code-Agent
 
 # For practice, we are going to write a quasi-agent that can write Python functions based on user requirements. It isn’t quite a real agent, it can’t react and adapt, but it can do something useful for us.
 
