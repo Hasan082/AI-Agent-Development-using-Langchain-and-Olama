@@ -3,6 +3,7 @@ import speech_recognition as sr
 from langchain_community.chat_message_histories import ChatMessageHistory
 from langchain_core.prompts import PromptTemplate
 from langchain_ollama import OllamaLLM
+import pyaudio # required for speech recognition
 
 # Initialize the LLM model
 llm = OllamaLLM(model="qwen2.5:1.5b")
@@ -17,11 +18,26 @@ recognizer.energy_threshold = 300
 recognizer.dynamic_energy_threshold = True
 
 def speak(text):
+    """
+    Speaks the given text using the pyttsx3 library.
+
+    Args:
+        text (str): Text to be spoken
+    """
     engine = pyttsx3.init()
     engine.say(text)
     engine.runAndWait()
 
 def listen():
+    """
+    Listens to the microphone and returns a string of what the user said.
+
+    Recognizes speech using Google Speech Recognition. If the speech is not recognized,
+    it will print an error message and return None.
+
+    Returns:
+        str: Recognized speech
+    """
     try:
         with sr.Microphone() as source:
             print("Listening...")
@@ -49,6 +65,15 @@ prompt = PromptTemplate(
 
 # Function to run the LLM chain and generate response
 def run_chain(question):
+    """
+    Runs the LLM chain to generate a response to the user's question.
+
+    Args:
+        question (str): User's question
+
+    Returns:
+        str: AI's response
+    """
     chat_history_text = "\n".join(
         [f"{msg.type.capitalize()}: {msg.content}" for msg in chat_history.messages]
     )
