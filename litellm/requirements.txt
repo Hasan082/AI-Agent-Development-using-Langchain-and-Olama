@@ -1,3 +1,0 @@
-# Require for litellm_normal.py
-litellm
-litellm[proxy]
