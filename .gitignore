@@ -6,6 +6,7 @@ vemv/
 .env/
 .venv/
 ../../venv/
+output.mp3
 # ---------------------------
 # Python Cache & Build Files
 # ---------------------------
