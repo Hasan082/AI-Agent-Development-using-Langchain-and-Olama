@@ -98,8 +98,6 @@ while True:
     print(f"User: {query}")
     response = run_chain(query)
     print(f"Personal Assistant: {response}")
-    
-    # Speak back to the user using pyttsx3
     speak(response)
 
 print("Goodbye!")
