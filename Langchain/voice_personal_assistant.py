@@ -74,7 +74,8 @@ pygame.init()
 
 def speak(text: str):
     tts = gTTS(text=text, lang='en')
-    speech_file = "output.mp3" tts.save(speech_file)
+    speech_file = "output.mp3"
+    tts.save(speech_file)
 
     # Play the output audio using pygame
     pygame.mixer.music.load(speech_file)
